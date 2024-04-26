@@ -4,17 +4,19 @@ import ResultModal from "./ResultModal";
 export default function TimerChallenge({ title, targetTime }) {
   let timer = useRef();
   const dialog = useRef();
-  const [timerStarted, setTimerStarted] = useState(false);
-  const [timerExpired, setTimerExpired] = useState(false);
+  // const [timerStarted, setTimerStarted] = useState(false);
+  // const [timerExpired, setTimerExpired] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState(targetTime);
+  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
   function handleStart() {
-    timer.current = setTimeout(() => {
-      setTimerExpired(true);
-      dialog.current.open();
-    }, targetTime * 1000);
-    setTimerStarted(true);
+    timer.current = setInterval(() => {
+      setTimeRemaining((prevTimeRemaining) => {
+        prevTimeRemaining - 500;
+      });
+    }, 500);
   }
   function handleStop() {
-    clearTimeout(timer.current);
+    clearInterval(timer.current);
   }
   return (
     <>
