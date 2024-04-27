@@ -11,6 +11,9 @@ function App() {
         <TimerChallenge title="Hard" targetTime={10} />
         <TimerChallenge title="Pros Only" targetTime={15} />
       </div>
+      <p id="app-p">
+        Created by <a target="_blank" href="https://www.linkedin.com/in/burhan-siraj/">Burhan Uddin</a>
+      </p>
     </>
   );
 }

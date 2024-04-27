@@ -81,6 +81,17 @@ header p {
   border-bottom-right-radius: 4px;
 }
 
+#app-p, a{
+  text-align: center;
+  color: #00eeff;
+  text-decoration: none;
+  color: rgba(118, 181, 197, 0.5);
+}
+
+#app-p a:hover{
+  color: rgba(118, 181, 197, 1);
+}
+
 #player button:hover {
   background-color: #3c8379;
   border-color: #3c8379;
