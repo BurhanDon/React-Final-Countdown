@@ -10,11 +10,26 @@ export default function Player() {
       playerName.current.value = "";
     }
   }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      const inputName = playerName.current.value.trim();
+      if (inputName) {
+        setEnteredPlayerName(inputName);
+        playerName.current.value = "";
+      }
+    }
+  }
   return (
     <section id="player">
       <h2>Welcome {enteredPlayerName ?? "Unknown Player"}</h2>
       <p>
-        <input placeholder="Enter Name" type="text" ref={playerName} />
+        <input
+          onKeyDown={handleKeyPress}
+          placeholder="Enter Name"
+          type="text"
+          ref={playerName}
+        />
         <button onClick={handleClick}>Set Name</button>
       </p>
     </section>
